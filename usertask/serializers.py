@@ -2,10 +2,6 @@ from rest_framework import serializers
 from .models import CustomUser
 from rest_auth.registration.serializers import RegisterSerializer
 
-class CustomUserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model=CustomUser
-        fields="__all__"
 
 class CustomUserRegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(style={'input_type': 'password'}, write_only=True,required=True)
